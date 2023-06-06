@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Privat API</title>
+</head>
+<body>
+
+<h2>Current time :</h2>
+<h2>{{currentTime}}</h2>
+
+
+<form method="POST">
+		{{form.hidden_tag()}}
+		<fieldset>
+			<div id=amount_money>
+				{{form.amount_money.label()}}
+				{{form.amount_money()}}
+			</div>
+		</fieldset>
+		<div>
+			{{form.submit()}}
+		</div>
+	</form>
+
+</body>
+</html>

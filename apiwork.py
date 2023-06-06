@@ -1,0 +1,23 @@
+
+import requests
+
+def get_exchanges_rates():
+
+	response = requests.get("https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5")
+	exchange_rates = {"dollar" : float(response.json()[0]["sale"]), 
+						"euro" : float(response.json()[1]["sale"])}
+
+
+	return exchange_rates
+
+def calculate_exchanged_money(amount_money):
+	exchange_rates = get_exchanges_rates()
+	answer = {"exchange_rates" : {"dollar" : exchange_rates["dollar"] ,"euro" : exchange_rates["euro"]}, 
+				"exchanged_money" : {"exchanged_in_dollar" : amount_money * exchange_rates["dollar"], 
+										"exchanged_in_euro" : amount_money * exchange_rates["euro"]}}
+
+	return answer
+
+
+
+
