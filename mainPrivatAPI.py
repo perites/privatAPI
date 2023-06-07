@@ -32,7 +32,7 @@ def home_post():
 		return render_template("index_post_error.html" ,message = ex)
 
 	except ValueError as ex:
-		return render_template("index_post_error.html" ,message = ex)
+		return render_template("index_post_error.html" ,message = "Сумма введена некоректно")
 
 
 
