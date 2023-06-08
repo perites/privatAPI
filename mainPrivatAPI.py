@@ -1,12 +1,19 @@
 import time
+
 from flask import Flask , render_template , request , redirect , url_for
 from forms import DateForm
+
+
 
 from apiClasses import *
 from exceptions import * 
 
+
+
 app = Flask(__name__)
 app.config["SECRET_KEY"] = 'c42e8d7a0a1003456342385cb9e30b6b'
+
+
 
 
 @app.route("/" , methods = ["GET"])
@@ -25,6 +32,7 @@ def home_post():
 
 	try:
 		amount_money = float(amount_money)
+		logging.info(f"Got {amount_money} money ")		
 
 		value_in_usd = usdAPI(amount_money)
 		value_in_euro = euroAPI(amount_money)
@@ -40,13 +48,16 @@ def home_post():
 
 
 
+		logging.info(f"Got resolts :  {answer} , now render index_post.html ")
 		return render_template("index_post.html" ,currentTime = currentTime , answer = answer)
 
 
 	except BadAPIResponse as ex:
+		logging.error("Exception occurred", exc_info=True)
 		return ex.html()
 
 	except ValueError as ex:
+		logging.error("Exception occurred", exc_info=True)
 		return render_template("index_post_error.html" ,message = "Сумма введена некоректно")
 
 
