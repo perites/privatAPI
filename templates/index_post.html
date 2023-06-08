@@ -8,9 +8,11 @@
 <h2>Current time :</h2>
 <h2>{{currentTime}}</h2>
 
-<h4>Курси на данний момент: {{answer["exchange_rates"]["dollar"]}} , {{answer["exchange_rates"]["euro"]}}</h4>
-<h4>Ваша сумма у долларах : {{answer["exchanged_money"]["exchanged_in_dollar"]}} </h4>
-<h4>Ваша сумма у євро : {{answer["exchanged_money"]["exchanged_in_euro"]}}</h4>
+<h4>Курси на данний момент: {{ answer[0][0]}} , {{ answer[1][0]}} , {{answer[2][0]}} , {{answer[3][0] }}</h4>
+<h4>Ваша сумма у долларах : {{answer[0][1]}} </h4>
+<h4>Ваша сумма у євро : {{answer[1][1]}} </h4>
+<h4>Ваша сумма у ефіріум : {{answer[2][1]}} </h4>
+<h4>Ваша сумма у біткоінах: {{answer[3][1]}} </h4>
 
 
  <a href="/">

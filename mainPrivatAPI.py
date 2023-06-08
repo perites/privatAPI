@@ -2,7 +2,7 @@ import time
 from flask import Flask , render_template , request , redirect , url_for
 from forms import DateForm
 
-from apiwork import *
+from apiClasses import *
 from exceptions import * 
 
 app = Flask(__name__)
@@ -25,14 +25,30 @@ def home_post():
 
 	try:
 		amount_money = float(amount_money)
-		answer = calculate_exchanged_money(amount_money)
-		return render_template("index_post.html" ,currentTime = currentTime , answer = answer) 
+
+		value_in_usd = usdAPI(amount_money)
+		value_in_euro = euroAPI(amount_money)
+		value_in_eth = ethAPI(amount_money)
+		value_in_btc = btcAPI(amount_money)
+		answer = []
+
+		for v in (value_in_usd, value_in_euro, value_in_eth, value_in_btc):
+			list1 = []
+			list1.append(round(v.get_rate(), 4 ))
+			list1.append(round(v.calculate_exchanged_money(), 4 ))
+			answer.append(list1)
+
+
+
+		return render_template("index_post.html" ,currentTime = currentTime , answer = answer)
+
 
 	except BadAPIResponse as ex:
-		return render_template("index_post_error.html" ,message = ex)
+		return ex.html()
 
 	except ValueError as ex:
 		return render_template("index_post_error.html" ,message = "Сумма введена некоректно")
+
 
 
 
