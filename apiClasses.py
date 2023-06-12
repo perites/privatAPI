@@ -86,33 +86,6 @@ class CalculatorResponse():
 
 
 
-# class EthAPI(RateCalculation):
-# 	def get_rate(self):
-# 		url = 'https://rest.coinapi.io/v1/exchangerate/ETH/USD'
-# 		headers = {'X-CoinAPI-Key' : '9AC813D4-76D9-4A74-916D-4769B6596235'}
-# 		response = requests.get(url, headers=headers)
-# 		print("eth" , response)
-# 		if response.status_code == 200:
-# 			return [response.json()["rate"] * UsdAPI().get_rate(), "Eth"]
-# 		else:
-# 			raise BadAPIResponse
-
-
-# class BtcAPI(RateCalculation):
-# 	def get_rate(self):
-# 		url = 'https://rest.coinapi.io/v1/exchangerate/BTC/USD'
-# 		headers = {'X-CoinAPI-Key' : '9AC813D4-76D9-4A74-916D-4769B6596235'}
-# 		response = requests.get(url, headers=headers)
-# 		print("btc" , response.status_code )
-# 		if response.status_code == 200:
-# 			return [response.json()["rate"] * UsdAPI().get_rate(), "Btc"]
-# 		else:
-# 			raise BadAPIResponse
-
-
-
-
-
 	
 
 
