@@ -35,15 +35,11 @@ def home_post():
 	try:
 		amount_money = float(amount_money)
 		logging.info(f"Got {amount_money} money ")		
-
-		privat_response = PrivatAPI()
-		# eth_response = Coin_ETH_API()
-		# btc_response = Coin_BTC_API()
-
-		response_for_usd = UsdAPI(privat_response.response).calculate_exchanged_value(amount_money)
-		response_for_euro = EuroAPI(privat_response.response).calculate_exchanged_value(amount_money)
-		# response_for_eth = EthAPI(eth_response.response).calculate_exchanged_value(amount_money)
-		# response_for_btc = BtcAPI(btc_response.response).calculate_exchanged_value(amount_money)
+		
+		response_for_usd = UsdAPI().calculate_exchanged_value(amount_money)
+		response_for_euro = EuroAPI().calculate_exchanged_value(amount_money)
+		# response_for_eth = EthAPI().calculate_exchanged_value(amount_money)
+		# response_for_btc = BtcAPI().calculate_exchanged_value(amount_money)
 
 		answer = [response_for_usd, response_for_euro]#, response_for_eth, response_for_btc]
 
@@ -58,13 +54,6 @@ def home_post():
 	except ValueError as ex:
 		logging.error("Exception occurred", exc_info=True)
 		return render_template("index_post_error.html" ,message = ex)#"Сумма введена некоректно")
-
-
-
-
-
-
-
 
 
 
