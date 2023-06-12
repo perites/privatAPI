@@ -1,2 +1,34 @@
 WARNING: 12-Jun-23 14:28:51 -  * Debugger is active!
 INFO: 12-Jun-23 14:28:51 -  * Debugger PIN: 384-788-638
+INFO: 12-Jun-23 14:35:44 - Got 544.0 money 
+DEBUG: 12-Jun-23 14:35:44 - Starting new HTTPS connection (1): api.privatbank.ua:443
+DEBUG: 12-Jun-23 14:35:44 - https://api.privatbank.ua:443 "GET /p24api/pubinfo?exchange&coursid=5 HTTP/1.1" 200 133
+DEBUG: 12-Jun-23 14:35:44 - Starting new HTTPS connection (1): api.privatbank.ua:443
+DEBUG: 12-Jun-23 14:35:45 - https://api.privatbank.ua:443 "GET /p24api/pubinfo?exchange&coursid=5 HTTP/1.1" 200 133
+INFO: 12-Jun-23 14:35:45 - Getting api
+DEBUG: 12-Jun-23 14:35:45 - Starting new HTTPS connection (1): api.privatbank.ua:443
+DEBUG: 12-Jun-23 14:35:45 - https://api.privatbank.ua:443 "GET /p24api/pubinfo?exchange&coursid=5 HTTP/1.1" 200 133
+DEBUG: 12-Jun-23 14:35:45 - Starting new HTTPS connection (1): api.privatbank.ua:443
+DEBUG: 12-Jun-23 14:35:45 - https://api.privatbank.ua:443 "GET /p24api/pubinfo?exchange&coursid=5 HTTP/1.1" 200 133
+INFO: 12-Jun-23 14:35:45 - Getting api
+DEBUG: 12-Jun-23 14:35:45 - Starting new HTTPS connection (1): rest.coinapi.io:443
+DEBUG: 12-Jun-23 14:35:45 - https://rest.coinapi.io:443 "GET /v1/exchangerate/ETH/USD HTTP/1.1" 200 None
+DEBUG: 12-Jun-23 14:35:45 - Starting new HTTPS connection (1): api.privatbank.ua:443
+DEBUG: 12-Jun-23 14:35:45 - https://api.privatbank.ua:443 "GET /p24api/pubinfo?exchange&coursid=5 HTTP/1.1" 200 133
+DEBUG: 12-Jun-23 14:35:45 - Starting new HTTPS connection (1): rest.coinapi.io:443
+DEBUG: 12-Jun-23 14:35:45 - https://rest.coinapi.io:443 "GET /v1/exchangerate/ETH/USD HTTP/1.1" 200 None
+DEBUG: 12-Jun-23 14:35:45 - Starting new HTTPS connection (1): api.privatbank.ua:443
+DEBUG: 12-Jun-23 14:35:46 - https://api.privatbank.ua:443 "GET /p24api/pubinfo?exchange&coursid=5 HTTP/1.1" 200 133
+INFO: 12-Jun-23 14:35:46 - Getting api
+DEBUG: 12-Jun-23 14:35:46 - Starting new HTTPS connection (1): rest.coinapi.io:443
+DEBUG: 12-Jun-23 14:35:46 - https://rest.coinapi.io:443 "GET /v1/exchangerate/BTC/USD HTTP/1.1" 200 None
+DEBUG: 12-Jun-23 14:35:46 - Starting new HTTPS connection (1): api.privatbank.ua:443
+DEBUG: 12-Jun-23 14:35:46 - https://api.privatbank.ua:443 "GET /p24api/pubinfo?exchange&coursid=5 HTTP/1.1" 200 133
+DEBUG: 12-Jun-23 14:35:46 - Starting new HTTPS connection (1): rest.coinapi.io:443
+DEBUG: 12-Jun-23 14:35:46 - https://rest.coinapi.io:443 "GET /v1/exchangerate/BTC/USD HTTP/1.1" 200 None
+DEBUG: 12-Jun-23 14:35:46 - Starting new HTTPS connection (1): api.privatbank.ua:443
+DEBUG: 12-Jun-23 14:35:46 - https://api.privatbank.ua:443 "GET /p24api/pubinfo?exchange&coursid=5 HTTP/1.1" 200 133
+INFO: 12-Jun-23 14:35:46 - Getting api
+INFO: 12-Jun-23 14:35:46 - Got resolts :  [[40.3, 13.49875930521092], [37.22, 14.61579795808705], [70278.7355, 0.007740605976042356], [1044441.058, 0.0005208527526117228]] , now render index_post.html 
+INFO: 12-Jun-23 14:35:46 - 127.0.0.1 - - [12/Jun/2023 14:35:46] "POST / HTTP/1.1" 200 -
+INFO: 12-Jun-23 14:35:48 - 127.0.0.1 - - [12/Jun/2023 14:35:48] "GET / HTTP/1.1" 200 -
