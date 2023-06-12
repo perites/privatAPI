@@ -36,19 +36,16 @@ def home_post():
 		amount_money = float(amount_money)
 		logging.info(f"Got {amount_money} money ")		
 
-		value_in_usd = UsdAPI()#(amount_money)
-		value_in_euro = EuroAPI()#(amount_money)
-		value_in_eth = EthAPI()#(amount_money)
-		value_in_btc = BtcAPI()#(amount_money)
-		answer = []
+		privat_response = PrivatAPI()
+		# eth_response = Coin_ETH_API()
+		# btc_response = Coin_BTC_API()
 
-		for v in (value_in_usd, value_in_euro, value_in_eth, value_in_btc):
-			list1 = []
-			list1.append(v.get_rate())
-			list1.append(v.calculate_exchanged_money(amount_money))
-			answer.append(list1)
+		response_for_usd = UsdAPI(privat_response.response).calculate_exchanged_value(amount_money)
+		response_for_euro = EuroAPI(privat_response.response).calculate_exchanged_value(amount_money)
+		# response_for_eth = EthAPI(eth_response.response).calculate_exchanged_value(amount_money)
+		# response_for_btc = BtcAPI(btc_response.response).calculate_exchanged_value(amount_money)
 
-
+		answer = [response_for_usd, response_for_euro]#, response_for_eth, response_for_btc]
 
 		logging.info(f"Got resolts :  {answer} , now render index_post.html ")
 		return render_template("index_post.html" ,currentTime = currentTime , answer = answer)
@@ -60,7 +57,7 @@ def home_post():
 
 	except ValueError as ex:
 		logging.error("Exception occurred", exc_info=True)
-		return render_template("index_post_error.html" ,message = "Сумма введена некоректно")
+		return render_template("index_post_error.html" ,message = ex)#"Сумма введена некоректно")
 
 
 
