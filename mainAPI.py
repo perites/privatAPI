@@ -11,7 +11,7 @@ from exceptions import *
 
 
 
-logging.basicConfig(format='%(levelname)s: %(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S',  filename='currencyAPI_logs.log', filemode='w', level=logging.DEBUG)
+logging.basicConfig(format='%(levelname)s: %(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S',  filename='C:\\Users\\nikit\\OneDrive\\Documents\\pyfile\\pyLearning\\currencyApi_logs\\currencyAPI_logs.log', filemode='w', level=logging.DEBUG)
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = 'c42e8d7a0a1003456342385cb9e30b6b'
