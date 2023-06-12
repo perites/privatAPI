@@ -1,4 +1,5 @@
 import time
+import logging 
 
 from flask import Flask , render_template , request , redirect , url_for
 from forms import DateForm
@@ -10,9 +11,10 @@ from exceptions import *
 
 
 
+logging.basicConfig(format='%(levelname)s: %(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S',  filename='currencyAPI_logs.log', filemode='w', level=logging.DEBUG)
+
 app = Flask(__name__)
 app.config["SECRET_KEY"] = 'c42e8d7a0a1003456342385cb9e30b6b'
-
 
 
 
@@ -34,16 +36,16 @@ def home_post():
 		amount_money = float(amount_money)
 		logging.info(f"Got {amount_money} money ")		
 
-		value_in_usd = usdAPI(amount_money)
-		value_in_euro = euroAPI(amount_money)
-		value_in_eth = ethAPI(amount_money)
-		value_in_btc = btcAPI(amount_money)
+		value_in_usd = UsdAPI()#(amount_money)
+		value_in_euro = EuroAPI()#(amount_money)
+		value_in_eth = EthAPI()#(amount_money)
+		value_in_btc = BtcAPI()#(amount_money)
 		answer = []
 
 		for v in (value_in_usd, value_in_euro, value_in_eth, value_in_btc):
 			list1 = []
-			list1.append(round(v.get_rate(), 4 ))
-			list1.append(round(v.calculate_exchanged_money(), 4 ))
+			list1.append(v.get_rate())
+			list1.append(v.calculate_exchanged_money(amount_money))
 			answer.append(list1)
 
 
