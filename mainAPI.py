@@ -35,13 +35,13 @@ def home_post():
         amount_money = float(amount_money)
         logging.info(f"Got {amount_money} money ")
 
-
         response_for_euro = EuroAPI().calculate_exchanged_value(amount_money)
         response_for_usd = UsdAPI().calculate_exchanged_value(amount_money)
         response_for_eth = EthAPI().calculate_exchanged_value(amount_money)
         response_for_btc = BtcAPI().calculate_exchanged_value(amount_money)
 
-        answer = [response_for_usd, response_for_euro , response_for_eth, response_for_btc]
+        answer = [response_for_usd, response_for_euro,
+                  response_for_eth, response_for_btc]
 
         logging.info(f"Got resolts :  {answer} , now render index_post.html ")
         return render_template("index_post.html", currentTime=currentTime, answer=answer)
@@ -50,9 +50,9 @@ def home_post():
         logging.error("Exception occurred", exc_info=True)
         return ex.html()
 
-    # except ValueError as ex:
-    #     logging.error("Exception occurred", exc_info=True)
-    #     return render_template("index_post_error.html", message="Сумма введена некоректно")
+    except ValueError as ex:
+        logging.error("Exception occurred", exc_info=True)
+        return render_template("index_post_error.html", message="Сумма введена некоректно")
 
 
 if __name__ == '__main__':
